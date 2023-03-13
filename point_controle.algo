@@ -1,25 +1,27 @@
 ALGORITHM Voyelle
 VAR
-    text: char; 
-    i,j,nbr,nbr1 : INTEGER ; 
+    text: STRING; 
+    i: INTEGER ;
+    nombre_voyelles : INTEGER = 0;
+    nombre_lettres : INTEGER = 0;
 BEGIN
-    nbr = 0;
-    nbr1 = 0;
+    i := 0
+    REPEAT
+        write("Veillez saisir une phrase");
+        read(text);
+    UNTIL (text[0] = " " AND text[text.length -1] <> ".")
     
-    Ecrire("Veillez saisir une phrase");
-    lire(text);
-    FOR i = 0 in len(text)
-        IF mid(text,i, 1) = " " THEN
-            nbr = nbr +1;
+    FOR i FROM 0 in text.length DO
+        IF (text[i] = " ") THEN
+            nombre_lettres:= nombre_lettres +1;
         END_IF
     END_FOR
+    write("Le nombre de mot est", nombre_lettres);
 
-    Ecrire("Le nombre de mot est", nbr);
-    FOR j = 0 in len(text);
-        IF (mid (text,i,1)= "a" OR mid(text,i,1)= "e" OR mid(text,i,1) = "o" OR
-        mid(text,i,1) = "u" OR mid(text,i,1) = "y" OR mid(text,i,1) = "i") THEN
-            nbr1 = nbr1 + 1
+    FOR i FROM 0 in text.length DO
+        IF (phrase[i] ="a"OR phrase[i] ="i" OR phrase[i] ="e" phrase[i] ="o" OR phrase[i] ="u" OR phrase[i] ="y") THEN
+        nombre_voyelles := nombre_voyelles + 1
         END_IF
     END_FOR
-    Ecrire("Cette phrase compte", nbr1, "voyelles");
+    write("Cette phrase compte", nombre_voyelles, "voyelles");
 END

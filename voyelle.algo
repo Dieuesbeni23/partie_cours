@@ -1,0 +1,29 @@
+ALGORITHM Somme_distinct
+VAR
+    Tab1: ARRAY_OF INTEGER[i];
+    Tab2: ARRAY_OF INTEGER[j];
+    valeur_distinct: INTEGER;
+    valeur_identique: INTEGER;
+    somme: INTEGER = 0;
+    i: INTEGER = 0;
+    j: INTEGER = 0;
+    
+BEGIN
+    
+    FOR i FROM 0 TO Tab1.length -1 STEP 1  DO
+        write("Complétez le tableau 1")
+        read(Tab1[i])
+        FOR j FROM 0 TO Tab2.length -1 STEP 1 DO
+            write("Complétez le tableau 2")
+            read(Tab2[j])
+            IF (Tab1[i] = Tab2[j]) THEN
+            valeur_identique := valeur_identique +1;
+            ELSE
+                valeur_distinct := valeur_distinct +1;
+            END_IF
+            somme = somme + valeur_distinct
+        END_FOR
+    END_FOR
+    write(somme, "les élements distincts sont : ",valeur_distinct)
+
+END
