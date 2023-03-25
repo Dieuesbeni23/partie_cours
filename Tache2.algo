@@ -1,0 +1,17 @@
+
+ALGORITHM sequence_tri
+VAR
+    arr : ARRAY_OF INTEGER[i];
+    j: INTEGER;
+    element_a_inserer : INTEGER;
+BEGIN
+    FOR i FROM 0 TO arr.length -1 STEP 1  DO
+    element_a_inserer := arr[i];
+    j := i-1
+    END_FOR
+    WHILE (j >= 0 and arr[j] > element_a_inserer) DO
+        arr[j+1] := arr[j];
+        j := j-1;
+    END_WHILE
+    arr[j+1] := element_a_inserer; 
+END
