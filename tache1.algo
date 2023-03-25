@@ -22,3 +22,20 @@ BEGIN
         write("Les deux vecteurs ne sont pas orthogonaux")
     END_IF
 END
+
+ALGORITHM tache1
+VAR
+    vecteurs:	STRUCT
+                        a: FLOAT;
+                        b: FLOAT;
+                    END_STRUCT
+    x  : FLOAT,
+BEGIN
+    write("Saisir les chiffres : ")
+    read(a, b)
+    y.vecteurs(a, b)
+    
+    x := check_orthogonal(a, b)
+
+    write(v1, "et", v2 , "sont :", x)
+END
