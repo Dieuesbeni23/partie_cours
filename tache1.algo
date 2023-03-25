@@ -1,7 +1,7 @@
-FUNCTION dot_product(v1, v2) : INTEGER;
+FUNCTION dot_product(v1, v2);
 VAR
-    v1 : INTEGER;
-    v2 : INTEGER;
+    v1 : ARRAY_OF float[i];
+    v2 : ARRAY_OF float[i];
 BEGIN
     ps :=0;
     FOR i FROM   DO
