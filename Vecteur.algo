@@ -1,0 +1,39 @@
+Vecteur:	STRUCT
+                    x: FLOAT;
+                    y: FLOAT;
+                END_STRUCT
+
+FUNCTION product(v1:Vecteur , v2: Vecteur);
+VAR
+    ps:FLOAT;
+BEGIN
+
+        ps := (v1.x * v2.x) + (v1.y * v2.y)
+    RETURN ps;
+END
+
+PROCEDURE orthogonal(v1:Vecteur, v2: Vecteur)
+VAR
+    result:FLOAT;
+BEGIN
+    result := product(v1, v2);
+    IF (result = 0) THEN
+        write("Les deux vecteurs sont orthogonaux");
+    ELSE
+        write("Les deux vecteurs ne sont pas orthogonaux");
+    END_IF
+END
+
+ALGORITHM tache1
+VAR
+    tab : ARRAY_OF type[length];
+    x : FLOAT;
+    y : FLOAT;
+BEGIN
+    write("Veillez saisir les deux vecteurs");
+    read(x,y)
+    b := product(x,y);
+    a := orthogonal(x,y);
+    write("Le produit scalaire est ", a ,"conclusion", b )
+    END_FOR
+END
